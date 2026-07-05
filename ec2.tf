@@ -1,4 +1,4 @@
-locals{servers=["DC01","DDC01","SF01","GOLD01"]}
+locals{servers=["DC001","DDC01","SF01","GOLD01"]}
 data "aws_ami" "win"{most_recent=true owners=["amazon"] filter{name="name" values=["Windows_Server-2022-English-Full-Base*"]}}
 resource "aws_instance" "srv"{for_each=toset(local.servers)
 ami=data.aws_ami.win.id
