@@ -1,0 +1,2 @@
+resource "aws_iam_role" "ec2_role"{name="citrix-lab-role" assume_role_policy=jsonencode({"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"ec2.amazonaws.com"},"Action":"sts:AssumeRole"}]})}
+resource "aws_iam_instance_profile" "profile"{name="citrix-lab-profile" role=aws_iam_role.ec2_role.name}

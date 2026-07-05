@@ -1,0 +1,1 @@
+Version1 deploys AWS networking and four Windows Server instances only.
